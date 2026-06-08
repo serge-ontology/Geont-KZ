@@ -9,8 +9,292 @@
 @base <http://ontogeo.kz/geont-kz#> .
 
 [ rdf:type owl:Ontology ;
-   owl:imports <http://www.w3.org/ns/lemon/ontolex>
+   owl:imports <http://www.w3.org/ns/lemon/ontolex> ,
+               <https://www.inf.ufrgs.br/bdi/ontologies/geocore.owl> ,
+               <http://buildingsmart.org> .
  ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontogeo.kz/geont-kz#contains
+:contains rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#determines
+:determines rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasAttribute
+:hasAttribute rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasBoundary
+:hasBoundary rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasComponent
+:hasComponent rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasConstituent
+:hasConstituent rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasFoundation
+:hasFoundation rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasGeologicalOrigin
+:hasGeologicalOrigin rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasInput
+:hasInput rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasLayer
+:hasLayer rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasMember
+:hasMember rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasOutput
+:hasOutput rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPart
+:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasParticipant
+:hasParticipant rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasRequirement
+:hasRequirement rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasRockType
+:hasRockType rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasSoilType
+:hasSoilType rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasSource
+:hasSource rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasSubclass
+:hasSubclass rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#influences
+:influences rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#interactsWith
+:interactsWith rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isAttributeOf
+:isAttributeOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isBoundaryOf
+:isBoundaryOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isComponentOf
+:isComponentOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isConstituentOf
+:isConstituentOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isContainedIn
+:isContainedIn rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isDeterminedBy
+:isDeterminedBy rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isFoundationFor
+:isFoundationFor rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isInfluencedBy
+:isInfluencedBy rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isInputTo
+:isInputTo rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isLayerOf
+:isLayerOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isMeasuredBy
+:isMeasuredBy rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isOutputOf
+:isOutputOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isPartOf
+:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isParticipantIn
+:isParticipantIn rdf:type owl:ObjectProperty .
+
+
+###  http://ontogeo.kz/geont-kz#isRequirementFor
+:isRequirementFor rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontogeo.kz/geont-kz#hasCarbonateContent
+:hasCarbonateContent rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasChlorideContent
+:hasChlorideContent rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasCohesion
+:hasCohesion rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasCompressiveStrength
+:hasCompressiveStrength rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasDensity
+:hasDensity rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasFluidityIndex
+:hasFluidityIndex rdf:type owl:DatatypeProperty ;
+                  rdfs:comment "a physical characteristic of clay soils that determines their consistency depending on moisture content"@en ,
+                               "физическая характеристика глинистых грунтов, определяющая их консистенцию в зависимости от влажности"@ru ;
+                  rdfs:label "fluidity coefficient"@en ,
+                             "коэффициент текучести"@ru ,
+                             "сазды топырақтардың ылғалдылық деңгейіне байланысты консистенциясын анықтайтын физикалық сипаттамасы"@kk ,
+                             "сұйықтық коэффициенті"@kk .
+
+
+###  http://ontogeo.kz/geont-kz#hasFrictionAngle
+:hasFrictionAngle rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasIceContent
+:hasIceContent rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasLiquidLimit
+:hasLiquidLimit rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasMoistureLimit
+:hasMoistureLimit rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasOrganicContent
+:hasOrganicContent rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPermeability
+:hasPermeability rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPhValue
+:hasPhValue rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPlasticLimit
+:hasPlasticLimit rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPlasticityIndex
+:hasPlasticityIndex rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPoissonRatio
+:hasPoissonRatio rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasPorosity
+:hasPorosity rdf:type owl:DatatypeProperty ;
+             rdfs:comment "the proportion of the volume of all pores contained in the soil in relation to its total volume"@en ,
+                          "доля объема всех пор, содержащихся в грунте, по отношению к его общему объему"@ru ,
+                          "топырақтағы барлық кеуектердің көлемінің оның жалпы көлеміне қатынасы"@kk ;
+             rdfs:label "porosity"@en ,
+                        "кеуектілік"@kk ,
+                        "пористость"@ru .
+
+
+###  http://ontogeo.kz/geont-kz#hasPorosityCoefficient
+:hasPorosityCoefficient rdf:type owl:DatatypeProperty ;
+                        rdfs:comment "the ratio of the volume of all pores in the soil to the volume of its solid particles"@en ,
+                                     "отношение объема всех пор в грунте к объему его твердых частиц"@ru ,
+                                     "топырақтағы барлық кеуектердің көлемінің оның қатты бөлшектерінің көлеміне қатынасы"@kk ;
+                        rdfs:label "porosity coefficient"@en ,
+                                   "кеуектілік коэффициенті"@kk ,
+                                   "коэффициент пористости"@ru .
+
+
+###  http://ontogeo.kz/geont-kz#hasShearStrength
+:hasShearStrength rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasShrinkageLimit
+:hasShrinkageLimit rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasStratigraphicPosition
+:hasStratigraphicPosition rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasSulphateContent
+:hasSulphateContent rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasUnitWeight
+:hasUnitWeight rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasVoidRatio
+:hasVoidRatio rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasWaterContent
+:hasWaterContent rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasYoungsModulus
+:hasYoungsModulus rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#measuresProperty
+:measuresProperty rdf:type owl:DatatypeProperty .
+
 
 #################################################################
 #    Classes
@@ -39,7 +323,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Adhesive
 :Adhesive rdf:type owl:Class ;
-          rdfs:subClassOf :GeotechnicalObject .
+          rdfs:subClassOf :GeotechnicalObject ,
+                          ifc:IfcMaterial .
 
 
 ###  http://ontogeo.kz/geont-kz#Airlift_pump
@@ -90,7 +375,8 @@
 ###  http://ontogeo.kz/geont-kz#Anisotropic_material
 :Anisotropic_material rdf:type owl:Class ;
                       rdfs:subClassOf :Anisotropy ,
-                                      ifc:IfcMaterialDefinition .
+                                      ifc:IfcMaterial ,
+                                      <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000006> .
 
 
 ###  http://ontogeo.kz/geont-kz#Anisotropy
@@ -155,7 +441,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Bleeding_index
 :Bleeding_index rdf:type owl:Class ;
-                rdfs:subClassOf :Laitance .
+                rdfs:subClassOf :GeotechnicalProperty .
 
 
 ###  http://ontogeo.kz/geont-kz#Blowcount_increment
@@ -221,7 +507,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Clay_soil
 :Clay_soil rdf:type owl:Class ;
-           rdfs:subClassOf :Soil_ground .
+           rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Clogging_grout_sealing
@@ -251,12 +537,13 @@
 
 ###  http://ontogeo.kz/geont-kz#Cohesive_soil
 :Cohesive_soil rdf:type owl:Class ;
-               rdfs:subClassOf :Clay_soil .
+               rdfs:subClassOf :Soil_ground .
 
 
 ###  http://ontogeo.kz/geont-kz#Collapse_settlement
 :Collapse_settlement rdf:type owl:Class ;
-                     rdfs:subClassOf :Settlements .
+                     rdfs:subClassOf :Settlements ,
+                                     <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
 
 
 ###  http://ontogeo.kz/geont-kz#Collapsible_soil
@@ -357,7 +644,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Cornerpile_welding
 :Cornerpile_welding rdf:type owl:Class ;
-                    rdfs:subClassOf :Individual_pile .
+                    rdfs:subClassOf :GeotechnicalProcess .
 
 
 ###  http://ontogeo.kz/geont-kz#Coulomb_law
@@ -417,32 +704,33 @@
 
 ###  http://ontogeo.kz/geont-kz#Cushion_pad
 :Cushion_pad rdf:type owl:Class ;
-             rdfs:subClassOf :GeotechnicalObject .
+             rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Dam
 :Dam rdf:type owl:Class ;
-     rdfs:subClassOf :GeotechnicalObject .
+     rdfs:subClassOf :Structure .
 
 
 ###  http://ontogeo.kz/geont-kz#Dam_base_contact
 :Dam_base_contact rdf:type owl:Class ;
-                  rdfs:subClassOf :GeotechnicalObject .
+                  rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Dam_key_cutoff_tooth
 :Dam_key_cutoff_tooth rdf:type owl:Class ;
-                      rdfs:subClassOf :GeotechnicalObject .
+                      rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Dam_slope
 :Dam_slope rdf:type owl:Class ;
-           rdfs:subClassOf :GeotechnicalObject .
+           rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Deformation
 :Deformation rdf:type owl:Class ;
-             rdfs:subClassOf :GeotechnicalProcess .
+             rdfs:subClassOf :GeotechnicalProcess ,
+                             <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
 
 
 ###  http://ontogeo.kz/geont-kz#Depth_of_control
@@ -540,7 +828,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Driving_hammer_assembly
 :Driving_hammer_assembly rdf:type owl:Class ;
-                         rdfs:subClassOf :GeotechnicalObject .
+                         rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Drop_hammer
@@ -590,7 +878,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Dynamic_probing_equipment
 :Dynamic_probing_equipment rdf:type owl:Class ;
-                           rdfs:subClassOf :GeotechnicalObject .
+                           rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Earth_construction_materials
@@ -600,7 +888,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Earth_structures
 :Earth_structures rdf:type owl:Class ;
-                  rdfs:subClassOf :Soilstructure_interaction .
+                  rdfs:subClassOf :Structure .
 
 
 ###  http://ontogeo.kz/geont-kz#Earthfill_dam
@@ -615,7 +903,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Earthquake_intensity
 :Earthquake_intensity rdf:type owl:Class ;
-                      rdfs:subClassOf :Intensity_point .
+                      rdfs:subClassOf :GeotechnicalProperty .
 
 
 ###  http://ontogeo.kz/geont-kz#Effective_stress
@@ -635,8 +923,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Endbearing_pile
 :Endbearing_pile rdf:type owl:Class ;
-                 rdfs:subClassOf :Foundation ,
-                                 ifc:IfcPile .
+                 rdfs:subClassOf :Pile .
 
 
 ###  http://ontogeo.kz/geont-kz#Energyratio_e_r
@@ -666,8 +953,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Enlarged_pile_base
 :Enlarged_pile_base rdf:type owl:Class ;
-                    rdfs:subClassOf :Endbearing_pile ,
-                                    ifc:IfcPile .
+                    rdfs:subClassOf :Pile .
 
 
 ###  http://ontogeo.kz/geont-kz#Epicentre
@@ -685,6 +971,14 @@
                        rdfs:subClassOf :Constrained_conditions .
 
 
+###  http://ontogeo.kz/geont-kz#Equipment
+:Equipment rdf:type owl:Class ;
+           rdfs:subClassOf :GeotechnicalObject ;
+           rdfs:label "equipment"@en ,
+                      "жабдық"@kk ,
+                      "оборудование"@ru .
+
+
 ###  http://ontogeo.kz/geont-kz#Exploitable_stratum
 :Exploitable_stratum rdf:type owl:Class ;
                      rdfs:subClassOf :Engineeringgeological_conditions .
@@ -692,7 +986,7 @@
 
 ###  http://ontogeo.kz/geont-kz#External_frp_strengthening_system
 :External_frp_strengthening_system rdf:type owl:Class ;
-                                   rdfs:subClassOf :External_strengthening_with_composites .
+                                   rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#External_stability
@@ -732,8 +1026,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Flexible_structural_system
 :Flexible_structural_system rdf:type owl:Class ;
-                            rdfs:subClassOf :Structural_system ,
-                                            ifc:IfcStructuralItem .
+                            rdfs:subClassOf :Structural_system .
 
 
 ###  http://ontogeo.kz/geont-kz#Floodprotection_levee
@@ -743,12 +1036,13 @@
 
 ###  http://ontogeo.kz/geont-kz#Formation_genesis
 :Formation_genesis rdf:type owl:Class ;
+                   owl:equivalentClass <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> ;
                    rdfs:subClassOf :Engineeringgeological_conditions .
 
 
 ###  http://ontogeo.kz/geont-kz#Foundation
 :Foundation rdf:type owl:Class ;
-            rdfs:subClassOf :GeotechnicalObject .
+            rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Foundation_deformation
@@ -803,8 +1097,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Frozen_soil
 :Frozen_soil rdf:type owl:Class ;
-             rdfs:subClassOf :Icerich_frozen_soil ,
-                             :Soil_ground .
+             rdfs:subClassOf :Icerich_frozen_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Gallery_dam
@@ -846,12 +1139,13 @@
 
 ###  http://ontogeo.kz/geont-kz#Graded_filter
 :Graded_filter rdf:type owl:Class ;
-               rdfs:subClassOf :GeotechnicalObject .
+               rdfs:subClassOf :Structure .
 
 
 ###  http://ontogeo.kz/geont-kz#Gravitational_water
 :Gravitational_water rdf:type owl:Class ;
-                     rdfs:subClassOf :GeotechnicalObject .
+                     rdfs:subClassOf :GeotechnicalObject ,
+                                     <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000009> .
 
 
 ###  http://ontogeo.kz/geont-kz#Gravity_retaining_structure
@@ -861,7 +1155,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Ground_anchor
 :Ground_anchor rdf:type owl:Class ;
-               rdfs:subClassOf :GeotechnicalObject .
+               rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Ground_base
@@ -886,7 +1180,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Grout_bonding
 :Grout_bonding rdf:type owl:Class ;
-               rdfs:subClassOf :GeotechnicalObject .
+               rdfs:subClassOf :GeotechnicalObject ,
+                               ifc:IfcMaterial .
 
 
 ###  http://ontogeo.kz/geont-kz#Grouting_cementation
@@ -911,7 +1206,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Handling_crane
 :Handling_crane rdf:type owl:Class ;
-                rdfs:subClassOf :Structural_element .
+                rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Hard_frozen_soil
@@ -926,7 +1221,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Hoisting_cables
 :Hoisting_cables rdf:type owl:Class ;
-                 rdfs:subClassOf :Handling_crane .
+                 rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Horizontal_displacement
@@ -966,7 +1261,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Improved_foundation
 :Improved_foundation rdf:type owl:Class ;
-                     rdfs:subClassOf :GeotechnicalObject .
+                     rdfs:subClassOf :Ground_base .
 
 
 ###  http://ontogeo.kz/geont-kz#Incidental_water
@@ -976,7 +1271,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Individual_pile
 :Individual_pile rdf:type owl:Class ;
-                 rdfs:subClassOf :Piled_foundation .
+                 rdfs:subClassOf :Pile .
 
 
 ###  http://ontogeo.kz/geont-kz#Infill_soil_filler
@@ -1131,7 +1426,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Local_construction_materials
 :Local_construction_materials rdf:type owl:Class ;
-                              rdfs:subClassOf :GeotechnicalObject .
+                              rdfs:subClassOf :GeotechnicalObject ,
+                                              ifc:IfcMaterial .
 
 
 ###  http://ontogeo.kz/geont-kz#Locking_load
@@ -1270,11 +1566,6 @@
             rdfs:subClassOf :Spoil_heap .
 
 
-###  http://ontogeo.kz/geont-kz#Owners_anchor_specialist
-:Owners_anchor_specialist rdf:type owl:Class ;
-                          rdfs:subClassOf :Ground_anchor .
-
-
 ###  http://ontogeo.kz/geont-kz#P_and_swave_velocities
 :P_and_swave_velocities rdf:type owl:Class ;
                         rdfs:subClassOf :Shear_modulus .
@@ -1353,7 +1644,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Pile
 :Pile rdf:type owl:Class ;
-      rdfs:subClassOf :Foundation .
+      rdfs:subClassOf :Structural_element ,
+                      ifc:IfcPile .
 
 
 ###  http://ontogeo.kz/geont-kz#Pile_base_soil
@@ -1463,7 +1755,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Rc_substrate
 :Rc_substrate rdf:type owl:Class ;
-              rdfs:subClassOf :GeotechnicalObject .
+              rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Reach
@@ -1539,13 +1831,12 @@
 
 ###  http://ontogeo.kz/geont-kz#Rigid_structural_system
 :Rigid_structural_system rdf:type owl:Class ;
-                         rdfs:subClassOf :Structural_system ,
-                                         ifc:IfcStructuralItem .
+                         rdfs:subClassOf :Structural_system .
 
 
 ###  http://ontogeo.kz/geont-kz#Rock
 :Rock rdf:type owl:Class ;
-      rdfs:subClassOf :Soil_ground .
+      rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Rock_jointing
@@ -1560,7 +1851,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Roller_carriage
 :Roller_carriage rdf:type owl:Class ;
-                 rdfs:subClassOf :Structure .
+                 rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Sand
@@ -1575,7 +1866,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Sealing_grout
 :Sealing_grout rdf:type owl:Class ;
-               rdfs:subClassOf :GeotechnicalObject .
+               rdfs:subClassOf :GeotechnicalObject ,
+                               ifc:IfcMaterial .
 
 
 ###  http://ontogeo.kz/geont-kz#Secondorder_elasticperfectly_plastic_analysis
@@ -1596,7 +1888,8 @@
 ###  http://ontogeo.kz/geont-kz#Seismic_action
 :Seismic_action rdf:type owl:Class ;
                 rdfs:subClassOf :GeotechnicalProcess ,
-                                ifc:IfcStructuralLoadStatic .
+                                ifc:IfcStructuralLoadStatic ,
+                                <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
 
 
 ###  http://ontogeo.kz/geont-kz#Seismic_resistance
@@ -1671,7 +1964,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Sliding_carriage
 :Sliding_carriage rdf:type owl:Class ;
-                  rdfs:subClassOf :Structure .
+                  rdfs:subClassOf :Equipment .
 
 
 ###  http://ontogeo.kz/geont-kz#Slope_cutfill
@@ -1686,7 +1979,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Slurry_pulp
 :Slurry_pulp rdf:type owl:Class ;
-             rdfs:subClassOf :Soil_fluidisation .
+             rdfs:subClassOf :GeotechnicalObject .
 
 
 ###  http://ontogeo.kz/geont-kz#Slurrytrench_wall
@@ -1697,7 +1990,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Slurrywall_construction
 :Slurrywall_construction rdf:type owl:Class ;
-                         rdfs:subClassOf :Retaining_component .
+                         rdfs:subClassOf :GeotechnicalProcess .
 
 
 ###  http://ontogeo.kz/geont-kz#Soil_cushion
@@ -1717,12 +2010,14 @@
 
 ###  http://ontogeo.kz/geont-kz#Soil_fluidisation
 :Soil_fluidisation rdf:type owl:Class ;
-                   rdfs:subClassOf :GeotechnicalProcess .
+                   rdfs:subClassOf :GeotechnicalProcess ,
+                                   <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
 
 
 ###  http://ontogeo.kz/geont-kz#Soil_ground
 :Soil_ground rdf:type owl:Class ;
-             rdfs:subClassOf :Earth_construction_materials .
+             rdfs:subClassOf :Earth_construction_materials ,
+                             <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000006> .
 
 
 ###  http://ontogeo.kz/geont-kz#Soil_mass
@@ -1792,7 +2087,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Spoil_heap
 :Spoil_heap rdf:type owl:Class ;
-            rdfs:subClassOf :GeotechnicalObject .
+            rdfs:subClassOf :Structure .
 
 
 ###  http://ontogeo.kz/geont-kz#Standard_compaction
@@ -1849,17 +2144,12 @@
 
 ###  http://ontogeo.kz/geont-kz#Structural_element
 :Structural_element rdf:type owl:Class ;
-                    rdfs:subClassOf :Structure .
-
-
-###  http://ontogeo.kz/geont-kz#Structural_layout
-:Structural_layout rdf:type owl:Class ;
-                   rdfs:subClassOf :Structure .
+                    rdfs:subClassOf :GeotechnicalObject .
 
 
 ###  http://ontogeo.kz/geont-kz#Structural_system
 :Structural_system rdf:type owl:Class ;
-                   rdfs:subClassOf :Structure .
+                   rdfs:subClassOf :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#Structure
@@ -2045,7 +2335,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Vertical_groundsurface_deformations
 :Vertical_groundsurface_deformations rdf:type owl:Class ;
-                                     rdfs:subClassOf :GeotechnicalProcess .
+                                     rdfs:subClassOf :Deformation ,
+                                                     <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
 
 
 ###  http://ontogeo.kz/geont-kz#Vibration_damping
@@ -2070,12 +2361,13 @@
 
 ###  http://ontogeo.kz/geont-kz#Water_table
 :Water_table rdf:type owl:Class ;
-             rdfs:subClassOf :Aquifer .
+             rdfs:subClassOf :Aquifer ,
+                             <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000011> .
 
 
 ###  http://ontogeo.kz/geont-kz#Waterstop_hydroseal
 :Waterstop_hydroseal rdf:type owl:Class ;
-                     rdfs:subClassOf :Sealing_grout .
+                     rdfs:subClassOf :Anticorrosion_coating .
 
 
 ###  http://ontogeo.kz/geont-kz#Working_face
@@ -2093,52 +2385,104 @@
                 rdfs:subClassOf :Stiffness .
 
 
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcBeamType
-ifc:IfcBeamType rdf:type owl:Class .
+###  http://ontogeo.kz/geont-kz#firm_stiff_loam
+:firm_stiff_loam rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :loam
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasFluidityIndex ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:double ;
+                                                                                   owl:withRestrictions ( [ xsd:minInclusive "0.25"^^xsd:double
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasFluidityIndex ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:double ;
+                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "0.5"^^xsd:double
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:label "firm stiff loam"@en ,
+                            "отқа төзімді саздауыт"@kk ,
+                            "тугопластичный суглинок"@ru .
 
 
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcConstructionEquipmentResourceType
-ifc:IfcConstructionEquipmentResourceType rdf:type owl:Class .
+###  http://ontogeo.kz/geont-kz#loam
+:loam rdf:type owl:Class ;
+      rdfs:subClassOf :Cohesive_soil ;
+      rdfs:comment "soil with a predominant concentration of clay and a high percentage of sand"@en-au ,
+                   "грунт с преобладающей концентрацией глины и высоким процентом песка"@ru ,
+                   "саздың басым концентрациясы және құмның жоғары пайызы бар топырақ"@kk ;
+      rdfs:label "loam"@en ,
+                 "саздауыт"@kk ,
+                 "суглинок"@ru .
 
 
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcFlowTerminal
-ifc:IfcFlowTerminal rdf:type owl:Class .
+###  http://ontogeo.kz/geont-kz#sandy_loam
+:sandy_loam rdf:type owl:Class ;
+            rdfs:subClassOf :Cohesive_soil ;
+            rdfs:comment "a loose sedimentary rock that consists predominantly of sand particles (about 80–90%) with the addition of 3–10% clay and dust impurities"@en ,
+                         "негізінен құм бөлшектерінен (шамамен 80-90%) тұратын және 3-10% саз бен шаң қоспалары қосылған борпылдақ шөгінді тау жынысы"@kk ,
+                         "рыхлая осадочная горная порода, которая состоит преимущественно из песчаных частиц (около 80–90%) с добавлением 3–10% глинистых и пылеватых примесей"@ru ;
+            rdfs:label "sandy loam"@en ,
+                       "супесь"@ru ,
+                       "құмды саздауыт"@kk .
 
 
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcFlowTreatmentDevice
-ifc:IfcFlowTreatmentDevice rdf:type owl:Class .
+###  http://ontogeo.kz/geont-kz#stiff_loam
+:stiff_loam rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :loam
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasFluidityIndex ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasFluidityIndex ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:maxExclusive "0.25"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:label "stiff loam"@en ,
+                       "полутвердый суглинок"@ru ,
+                       "қатты саздауыт"@kk .
 
 
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcMaterialDefinition
-ifc:IfcMaterialDefinition rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcPile
-ifc:IfcPile rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcPlateType
-ifc:IfcPlateType rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcStructuralActivity
-ifc:IfcStructuralActivity rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcStructuralItem
-ifc:IfcStructuralItem rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcStructuralLoadStatic
-ifc:IfcStructuralLoadStatic rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcStructuralMember
-ifc:IfcStructuralMember rdf:type owl:Class .
-
-
-###  http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/IfcWallType
-ifc:IfcWallType rdf:type owl:Class .
+###  http://ontogeo.kz/geont-kz#very_stiff_loam
+:very_stiff_loam rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :loam
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasFluidityIndex ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:double ;
+                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "0.0"^^xsd:double
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:label "very stiff loam"@en ,
+                            "твердый суглинок"@ru ,
+                            "өте қатты саздауыт"@kk .
 
 
 #################################################################
@@ -13327,9 +13671,9 @@ ifc:IfcWallType rdf:type owl:Class .
 :Coupling_device rdfs:comment "Connector for joining bar or strand segments of an anchor tendon"@en ,
                               "Анкерлік созылатын элементті құрайтын сұрыпты илек пен арқанның ішінара ұзындығын қосуға арналған құрылғы."@kz ,
                               "Приспособление для соединения частичной длины сортового проката или троса, которые образуют анкерный растягивающий элемент"@ru ;
-                 rdfs:label "coupling device"@en ,
-                            "байланыстырушы элемент"@kz ,
-                            "соединительный элемент"@ru .
+                 rdfs:label "anchor coupling device"@en ,
+                            "соединительный элемент анкера"@ru ,
+                            "анкер байланыстырушы элемент" .
 
 
 :Creep rdfs:comment "Time-dependent deformation under sustained load"@en ,
@@ -13702,7 +14046,7 @@ ifc:IfcWallType rdf:type owl:Class .
                                "Сооружения из грунта, служащие основанием сооружаемого объекта"@ru ;
                   rdfs:label "earth structures"@en ,
                              "жер құрылыстары"@kz ,
-                             "земляные сооружения"@ru .
+                             "земляное сооружение"@ru .
 
 
 :Earthfill_dam rdfs:comment "Embankment dam constructed > 50 % by dry placement with mechanical compaction"@en ,
@@ -14123,7 +14467,7 @@ ifc:IfcWallType rdf:type owl:Class .
                                          "Тау жыныстарының ығысуымен бірге жарықшақтардың пайда болуымен білінетін жер бетінің шоғырланған деформациялары."@kz ;
                             rdfs:label "ground steps (strata breaks)"@en ,
                                        "Жоталар"@kz ,
-                                       "Уступы"@ru .
+                                       "уступы"@ru .
 
 
 :Grout_bonding rdfs:comment "Hardening mix that bonds anchor tendon to ground and transfers load"@en ,
@@ -14193,9 +14537,9 @@ ifc:IfcWallType rdf:type owl:Class .
 :Hoisting_cables rdfs:comment "Steel ropes suspending excavation tool"@en ,
                               "Стальной трос, поддерживающий инструмент для выемки грунта для глубокой выемки грунта"@ru ,
                               "Терең топырақ алу үшін топырақ алу құралын ұстап тұратын болат трос"@kz ;
-                 rdfs:label "hoisting cables"@en ,
-                            "кабельдер"@kz ,
-                            "тросы"@ru .
+                 rdfs:label "excavating crane hoisting cables"@en ,
+                            "тросы крана для выемки грунта"@ru ,
+                            "жер қазуға арналған кран кабельдер" .
 
 
 :Horizontal_displacement rdfs:comment "Lateral movement of ground or a structure produced by differential settlement"@en ,
@@ -14740,14 +15084,6 @@ ifc:IfcWallType rdf:type owl:Class .
             rdfs:label "overburden"@en ,
                        "аршылған жыныстар"@kz ,
                        "вскрышные породы"@ru .
-
-
-:Owners_anchor_specialist rdfs:comment "Developer’s representative knowledgeable in ground-anchor technology"@en ,
-                                       "Технический представитель застройщика( technischer bauherrenvertreter): представитель застройщика, знакомый со всеми аспектами применения анкеров и одновременно специалист в области техники крепления заземленными анкерами"@ru ,
-                                       "Құрылысшының техникалық өкілі (technischer bauherrenvertreter): анкерлерді қолданудың барлық аспектілерімен таныс және сонымен қатар жерленген анкерлермен бекіту техникасы саласының маманы болып табылатын құрылысшының өкілі"@kz ;
-                          rdfs:label "owner’s anchor specialist"@en ,
-                                     "технический представитель застройщика"@ru ,
-                                     "құрылыс салушының техникалық өкілі"@kz .
 
 
 :P_and_swave_velocities rdfs:comment "Velocities of compressional and shear waves in an elastic medium"@en ,
@@ -15662,14 +15998,6 @@ ifc:IfcWallType rdf:type owl:Class .
                                "құрылыс құрылымы"@kz .
 
 
-:Structural_layout rdfs:comment "Particular arrangement and type of primary load-bearing members"@en ,
-                                "Вариант конструктивной системы здания или сооружения по признакам состава и размещения ее основных несущих конструкций"@ru ,
-                                "Ғимараттың немесе құрылыстың негізгі көтергіш конструкцияларының құрамы мен орналасу белгілері бойынша конструктивтік жүйесінің нұсқасы"@kz ;
-                   rdfs:label "structural layout"@en ,
-                              "конструктивная схема"@ru ,
-                              "конструктивтік схема"@kz .
-
-
 :Structural_system rdfs:comment "Interrelated load-bearing components ensuring strength, stiffness and stability"@en ,
                                 "Совокупность взаимосвязанных конструкций здания или сооружения, обеспечивающая его прочность, жесткость и устойчивость"@ru ,
                                 "Ғимараттың немесе құрылыстың беріктігін, қаттылығын және орнықтылығын қамтамасыз ететін өзара байланысқан конструкциялардың жиынтығы"@kz ;
@@ -15802,8 +16130,8 @@ ifc:IfcWallType rdf:type owl:Class .
                             "Күш түсіру ұзындығынан анкер басына созу күшін беретін жерге тұйықталған анкердің бөлігі."@kz ,
                             "часть заземленного анкера, передающая растягивающее усилие от длины приложения усилия к головке анкера"@ru ;
                rdfs:label "tendon (anchor)"@en ,
-                          "растягивающий элемент"@ru ,
-                          "созылу элементі"@kz .
+                          "растягивающий элемент анкера"@ru ,
+                          "анкер созылу элементі" .
 
 
 :Test_load rdfs:comment "Peak load applied to an anchor during a load test"@en ,
@@ -15970,7 +16298,7 @@ ifc:IfcWallType rdf:type owl:Class .
                                                   "Деформации земной поверхности в вертикальной плоскости, вызванные неравномерностью вертикальных сдвижений"@ru ,
                                                   "Тікелей (вертикалды) ығысулардың біркелкі болмауынан туындаған, жер бетінің вертикалды жазықтықтағы деформациялары"@kz ;
                                      rdfs:label "vertical ground-surface deformations"@en ,
-                                                "деформации земной поверхности вертикальные"@ru ,
+                                                "деформация земной поверхности вертикальная"@ru ,
                                                 "жер бетінің тік деформациясы"@kz .
 
 
@@ -16047,66 +16375,3 @@ ifc:IfcWallType rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
-
-<http://ontogeo.kz/geont-kz#contains> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#determines> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasAttribute> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasBoundary> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasComponent> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasConstituent> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasFoundation> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasGeologicalOrigin> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasInput> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasLayer> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasMember> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasOutput> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasPart> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasParticipant> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasRequirement> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasRockType> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasSoilType> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasSource> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#hasSubclass> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#influences> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#interactsWith> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isAttributeOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isBoundaryOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isComponentOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isConstituentOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isContainedIn> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isDeterminedBy> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isFoundationFor> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isInfluencedBy> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isInputTo> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isLayerOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isMeasuredBy> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isMemberOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isOutputOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isPartOf> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isParticipantIn> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#isRequirementFor> a owl:ObjectProperty .
-<http://ontogeo.kz/geont-kz#measuresProperty> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasCarbonateContent> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasChlorideContent> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasCohesion> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasCompressiveStrength> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasDensity> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasFrictionAngle> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasIceContent> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasLiquidLimit> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasMoistureLimit> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasOrganicContent> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasPermeability> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasPhValue> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasPlasticLimit> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasPlasticityIndex> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasPoissonRatio> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasPorosity> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasShearStrength> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasShrinkageLimit> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasStratigraphicPosition> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasSulphateContent> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasUnitWeight> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasVoidRatio> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasWaterContent> a owl:DatatypeProperty .
-<http://ontogeo.kz/geont-kz#hasYoungsModulus> a owl:DatatypeProperty .
