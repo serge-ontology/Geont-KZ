@@ -190,11 +190,11 @@
 :hasDensity rdf:type owl:DatatypeProperty .
 
 
-###  http://ontogeo.kz/geont-kz#hasFluidityIndex
-:hasFluidityIndex rdf:type owl:DatatypeProperty ;
+###  http://ontogeo.kz/geont-kz#hasLiquidityIndex
+:hasLiquidityIndex rdf:type owl:DatatypeProperty ;
                   rdfs:comment "a physical characteristic of clay soils that determines their consistency depending on moisture content"@en ,
                                "физическая характеристика глинистых грунтов, определяющая их консистенцию в зависимости от влажности"@ru ;
-                  rdfs:label "fluidity coefficient"@en ,
+                  rdfs:label "liquidity coefficient"@en ,
                              "коэффициент текучести"@ru ,
                              "сазды топырақтардың ылғалдылық деңгейіне байланысты консистенциясын анықтайтын физикалық сипаттамасы"@kk ,
                              "сұйықтық коэффициенті"@kk .
@@ -2389,7 +2389,7 @@
 :firm_stiff_loam rdf:type owl:Class ;
                  owl:equivalentClass [ owl:intersectionOf ( :loam
                                                             [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :hasFluidityIndex ;
+                                                              owl:onProperty :hasLiquidityIndex ;
                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
                                                                                    owl:onDatatype xsd:double ;
                                                                                    owl:withRestrictions ( [ xsd:minInclusive "0.25"^^xsd:double
@@ -2398,7 +2398,7 @@
                                                                                  ]
                                                             ]
                                                             [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :hasFluidityIndex ;
+                                                              owl:onProperty :hasLiquidityIndex ;
                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
                                                                                    owl:onDatatype xsd:double ;
                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "0.5"^^xsd:double
@@ -2440,7 +2440,7 @@
 :stiff_loam rdf:type owl:Class ;
             owl:equivalentClass [ owl:intersectionOf ( :loam
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :hasFluidityIndex ;
+                                                         owl:onProperty :hasLiquidityIndex ;
                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
                                                                               owl:onDatatype xsd:double ;
                                                                               owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:double
@@ -2449,7 +2449,7 @@
                                                                             ]
                                                        ]
                                                        [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :hasFluidityIndex ;
+                                                         owl:onProperty :hasLiquidityIndex ;
                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
                                                                               owl:onDatatype xsd:double ;
                                                                               owl:withRestrictions ( [ xsd:maxExclusive "0.25"^^xsd:double
@@ -2469,7 +2469,7 @@
 :very_stiff_loam rdf:type owl:Class ;
                  owl:equivalentClass [ owl:intersectionOf ( :loam
                                                             [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :hasFluidityIndex ;
+                                                              owl:onProperty :hasLiquidityIndex ;
                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
                                                                                    owl:onDatatype xsd:double ;
                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "0.0"^^xsd:double
