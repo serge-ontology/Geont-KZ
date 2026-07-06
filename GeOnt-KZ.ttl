@@ -1,5 +1,5 @@
 @prefix : <http://ontogeo.kz/geont-kz#> .
-@prefix ifc: <http://www.buildingsmart-tech.org/ifc/IFC4/Add2TC1/> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC4#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -10,8 +10,8 @@
 
 [ rdf:type owl:Ontology ;
    owl:imports <http://www.w3.org/ns/lemon/ontolex> ,
-               <https://www.inf.ufrgs.br/bdi/ontologies/geocore.owl> ,
-               <http://buildingsmart.org> .
+               <https://raw.githubusercontent.com/openBIMstandards/ifcOWL/refs/heads/master/IFC4.owl> ,
+               <https://www.inf.ufrgs.br/bdi/ontologies/geocore.owl>
  ] .
 
 #################################################################
@@ -27,11 +27,17 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasAttribute
-:hasAttribute rdf:type owl:ObjectProperty .
+:hasAttribute rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isAttributeOf ;
+              rdfs:domain :GeotechnicalObject ;
+              rdfs:range :GeotechnicalProperty .
 
 
 ###  http://ontogeo.kz/geont-kz#hasBoundary
-:hasBoundary rdf:type owl:ObjectProperty .
+:hasBoundary rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isBoundaryOf ;
+             rdfs:domain <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001> ;
+             rdfs:range <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000011> .
 
 
 ###  http://ontogeo.kz/geont-kz#hasComponent
@@ -43,7 +49,10 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasFoundation
-:hasFoundation rdf:type owl:ObjectProperty .
+:hasFoundation rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isFoundationFor ;
+               rdfs:domain :Structure ;
+               rdfs:range :Foundation .
 
 
 ###  http://ontogeo.kz/geont-kz#hasGeologicalOrigin
@@ -67,7 +76,10 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasPart
-:hasPart rdf:type owl:ObjectProperty .
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isPartOf ;
+         rdfs:domain :Structure ;
+         rdfs:range :Structural_element .
 
 
 ###  http://ontogeo.kz/geont-kz#hasParticipant
@@ -90,10 +102,6 @@
 :hasSource rdf:type owl:ObjectProperty .
 
 
-###  http://ontogeo.kz/geont-kz#hasSubclass
-:hasSubclass rdf:type owl:ObjectProperty .
-
-
 ###  http://ontogeo.kz/geont-kz#influences
 :influences rdf:type owl:ObjectProperty .
 
@@ -103,11 +111,15 @@
 
 
 ###  http://ontogeo.kz/geont-kz#isAttributeOf
-:isAttributeOf rdf:type owl:ObjectProperty .
+:isAttributeOf rdf:type owl:ObjectProperty ;
+               rdfs:domain :GeotechnicalProperty ;
+               rdfs:range :GeotechnicalObject .
 
 
 ###  http://ontogeo.kz/geont-kz#isBoundaryOf
-:isBoundaryOf rdf:type owl:ObjectProperty .
+:isBoundaryOf rdf:type owl:ObjectProperty ;
+              rdfs:domain <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000011> ;
+              rdfs:range <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001> .
 
 
 ###  http://ontogeo.kz/geont-kz#isComponentOf
@@ -127,7 +139,9 @@
 
 
 ###  http://ontogeo.kz/geont-kz#isFoundationFor
-:isFoundationFor rdf:type owl:ObjectProperty .
+:isFoundationFor rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Foundation ;
+                 rdfs:range :Structure .
 
 
 ###  http://ontogeo.kz/geont-kz#isInfluencedBy
@@ -155,7 +169,9 @@
 
 
 ###  http://ontogeo.kz/geont-kz#isPartOf
-:isPartOf rdf:type owl:ObjectProperty .
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Structural_element ;
+          rdfs:range :Structure .
 
 
 ###  http://ontogeo.kz/geont-kz#isParticipantIn
@@ -190,16 +206,6 @@
 :hasDensity rdf:type owl:DatatypeProperty .
 
 
-###  http://ontogeo.kz/geont-kz#hasLiquidityIndex
-:hasLiquidityIndex rdf:type owl:DatatypeProperty ;
-                  rdfs:comment "a physical characteristic of clay soils that determines their consistency depending on moisture content"@en ,
-                               "физическая характеристика глинистых грунтов, определяющая их консистенцию в зависимости от влажности"@ru ;
-                  rdfs:label "liquidity coefficient"@en ,
-                             "коэффициент текучести"@ru ,
-                             "сазды топырақтардың ылғалдылық деңгейіне байланысты консистенциясын анықтайтын физикалық сипаттамасы"@kk ,
-                             "сұйықтық коэффициенті"@kk .
-
-
 ###  http://ontogeo.kz/geont-kz#hasFrictionAngle
 :hasFrictionAngle rdf:type owl:DatatypeProperty .
 
@@ -210,6 +216,16 @@
 
 ###  http://ontogeo.kz/geont-kz#hasLiquidLimit
 :hasLiquidLimit rdf:type owl:DatatypeProperty .
+
+
+###  http://ontogeo.kz/geont-kz#hasLiquidityIndex
+:hasLiquidityIndex rdf:type owl:DatatypeProperty ;
+                   rdfs:comment "a physical characteristic of clay soils that determines their consistency depending on moisture content"@en ,
+                                "физическая характеристика глинистых грунтов, определяющая их консистенцию в зависимости от влажности"@ru ;
+                   rdfs:label "liquidity coefficient"@en ,
+                              "коэффициент текучести"@ru ,
+                              "сазды топырақтардың ылғалдылық деңгейіне байланысты консистенциясын анықтайтын физикалық сипаттамасы"@kk ,
+                              "сұйықтық коэффициенті"@kk .
 
 
 ###  http://ontogeo.kz/geont-kz#hasMoistureLimit
@@ -787,8 +803,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Diaphragmwall_element
 :Diaphragmwall_element rdf:type owl:Class ;
-                       rdfs:subClassOf :Slurrytrench_wall ,
-                                       ifc:IfcWallType .
+                       rdfs:subClassOf :Slurrytrench_wall .
 
 
 ###  http://ontogeo.kz/geont-kz#Dilatantthixotropic_soils
@@ -1984,8 +1999,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Slurrytrench_wall
 :Slurrytrench_wall rdf:type owl:Class ;
-                   rdfs:subClassOf :Slurrywall_construction ,
-                                   ifc:IfcWallType .
+                   rdfs:subClassOf ifc:IfcWall .
 
 
 ###  http://ontogeo.kz/geont-kz#Slurrywall_construction
@@ -2022,7 +2036,8 @@
 
 ###  http://ontogeo.kz/geont-kz#Soil_mass
 :Soil_mass rdf:type owl:Class ;
-           rdfs:subClassOf :GeotechnicalObject .
+           rdfs:subClassOf :GeotechnicalObject ,
+                           <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001> .
 
 
 ###  http://ontogeo.kz/geont-kz#Soil_material_composition
