@@ -8,11 +8,10 @@
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @base <http://ontogeo.kz/geont-kz#> .
 
-[ rdf:type owl:Ontology ;
-   owl:imports <http://www.w3.org/ns/lemon/ontolex> ,
-               <https://raw.githubusercontent.com/openBIMstandards/ifcOWL/refs/heads/master/IFC4.owl> ,
-               <https://www.inf.ufrgs.br/bdi/ontologies/geocore.owl>
- ] .
+<http://ontogeo.kz/geont-kz#> rdf:type owl:Ontology ;
+                               owl:imports <http://www.w3.org/ns/lemon/ontolex> ,
+                                           <https://raw.githubusercontent.com/openBIMstandards/ifcOWL/refs/heads/master/IFC4.owl> ,
+                                           <https://www.inf.ufrgs.br/bdi/ontologies/geocore.owl> .
 
 #################################################################
 #    Object Properties
@@ -211,7 +210,12 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasIceContent
-:hasIceContent rdf:type owl:DatatypeProperty .
+:hasIceContent rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Earth_construction_materials ;
+               rdfs:range xsd:double ;
+               rdfs:label "ice content"@en ,
+                          "мұз құрамы"@kk ,
+                          "содержание льда"@ru .
 
 
 ###  http://ontogeo.kz/geont-kz#hasLiquidLimit
@@ -220,6 +224,8 @@
 
 ###  http://ontogeo.kz/geont-kz#hasLiquidityIndex
 :hasLiquidityIndex rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Earth_construction_materials ;
+                   rdfs:range xsd:double ;
                    rdfs:comment "a physical characteristic of clay soils that determines their consistency depending on moisture content"@en ,
                                 "физическая характеристика глинистых грунтов, определяющая их консистенцию в зависимости от влажности"@ru ;
                    rdfs:label "liquidity coefficient"@en ,
@@ -233,7 +239,15 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasOrganicContent
-:hasOrganicContent rdf:type owl:DatatypeProperty .
+:hasOrganicContent rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Earth_construction_materials ;
+                   rdfs:range xsd:double ;
+                   rdfs:comment "the percent of organic matter in the mass of soil"@en ,
+                                "процент органического вещества в общей массе сухого грунта"@ru ,
+                                "құрғақ топырақтың жалпы массасындағы органикалық заттардың пайызы"@kk ;
+                   rdfs:label "mass of organic matter, %"@en ,
+                              "масса органического вещества, %"@ru ,
+                              "органикалық заттардың массасы, %"@kk .
 
 
 ###  http://ontogeo.kz/geont-kz#hasPermeability
@@ -249,7 +263,12 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasPlasticityIndex
-:hasPlasticityIndex rdf:type owl:DatatypeProperty .
+:hasPlasticityIndex rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Earth_construction_materials ;
+                    rdfs:range xsd:double ;
+                    rdfs:label "plasticity number"@en ,
+                               "пластикалық сан"@kk ,
+                               "число пластичности"@ru .
 
 
 ###  http://ontogeo.kz/geont-kz#hasPoissonRatio
@@ -258,6 +277,8 @@
 
 ###  http://ontogeo.kz/geont-kz#hasPorosity
 :hasPorosity rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Earth_construction_materials ;
+             rdfs:range xsd:double ;
              rdfs:comment "the proportion of the volume of all pores contained in the soil in relation to its total volume"@en ,
                           "доля объема всех пор, содержащихся в грунте, по отношению к его общему объему"@ru ,
                           "топырақтағы барлық кеуектердің көлемінің оның жалпы көлеміне қатынасы"@kk ;
@@ -268,12 +289,41 @@
 
 ###  http://ontogeo.kz/geont-kz#hasPorosityCoefficient
 :hasPorosityCoefficient rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Earth_construction_materials ;
+                        rdfs:range xsd:double ;
                         rdfs:comment "the ratio of the volume of all pores in the soil to the volume of its solid particles"@en ,
                                      "отношение объема всех пор в грунте к объему его твердых частиц"@ru ,
                                      "топырақтағы барлық кеуектердің көлемінің оның қатты бөлшектерінің көлеміне қатынасы"@kk ;
                         rdfs:label "porosity coefficient"@en ,
                                    "кеуектілік коэффициенті"@kk ,
                                    "коэффициент пористости"@ru .
+
+
+###  http://ontogeo.kz/geont-kz#hasRelativeFrostHeavingDeformation
+:hasRelativeFrostHeavingDeformation rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :Earth_construction_materials ;
+                                    rdfs:range xsd:double ;
+                                    rdfs:label "relative frost heaving deformation"@en ,
+                                               "относительная деформация морозного пучения"@ru ,
+                                               "салыстырмалы аяз көтеру деформациясы"@kk .
+
+
+###  http://ontogeo.kz/geont-kz#hasRelativeSubsidenceDeformation
+:hasRelativeSubsidenceDeformation rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Earth_construction_materials ;
+                                  rdfs:range xsd:double ;
+                                  rdfs:label "relative subsidence deformation"@en ,
+                                             "относительная деформация просадочности"@ru ,
+                                             "салыстырмалы шөгу деформациясы"@kk .
+
+
+###  http://ontogeo.kz/geont-kz#hasRelativeSwellingDeformation
+:hasRelativeSwellingDeformation rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Earth_construction_materials ;
+                                rdfs:range xsd:double ;
+                                rdfs:label "relative swelling deformation"@en ,
+                                           "относительная деформация набухания"@ru ,
+                                           "салыстырмалы ісіну деформациясы"@kk .
 
 
 ###  http://ontogeo.kz/geont-kz#hasShearStrength
@@ -301,7 +351,12 @@
 
 
 ###  http://ontogeo.kz/geont-kz#hasWaterContent
-:hasWaterContent rdf:type owl:DatatypeProperty .
+:hasWaterContent rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Earth_construction_materials ;
+                 rdfs:range xsd:double ;
+                 rdfs:label "water saturation coefficient"@en ,
+                            "коэффициент водонасыщения"@ru ,
+                            "судың қанығу коэффициенті"@kk .
 
 
 ###  http://ontogeo.kz/geont-kz#hasYoungsModulus
@@ -523,6 +578,19 @@
 
 ###  http://ontogeo.kz/geont-kz#Clay_soil
 :Clay_soil rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasPlasticityIndex ;
+                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                             owl:onDatatype xsd:double ;
+                                                                             owl:withRestrictions ( [ xsd:minExclusive "0.17"^^xsd:double
+                                                                                                    ]
+                                                                                                  )
+                                                                           ]
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
            rdfs:subClassOf :Cohesive_soil .
 
 
@@ -564,7 +632,20 @@
 
 ###  http://ontogeo.kz/geont-kz#Collapsible_soil
 :Collapsible_soil rdf:type owl:Class ;
-                  rdfs:subClassOf :Soil_material_composition .
+                  owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasRelativeSubsidenceDeformation ;
+                                                               owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                    owl:onDatatype xsd:double ;
+                                                                                    owl:withRestrictions ( [ xsd:minInclusive "0.01"^^xsd:double
+                                                                                                           ]
+                                                                                                         )
+                                                                                  ]
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Collapsible_stratum
@@ -705,7 +786,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Cryogenic_bonds
 :Cryogenic_bonds rdf:type owl:Class ;
-                 rdfs:subClassOf :Frozen_soil .
+                 rdfs:subClassOf :Soil_structure .
 
 
 ###  http://ontogeo.kz/geont-kz#Cryogenic_texture
@@ -747,6 +828,27 @@
 :Deformation rdf:type owl:Class ;
              rdfs:subClassOf :GeotechnicalProcess ,
                              <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
+
+
+###  http://ontogeo.kz/geont-kz#Dense_sand
+:Dense_sand rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Sand
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasPorosityCoefficient ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive "0.75"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Sand ;
+            rdfs:label "dense sand"@en ,
+                       "плотный песок"@ru ,
+                       "тығыз құм"@kk .
 
 
 ###  http://ontogeo.kz/geont-kz#Depth_of_control
@@ -813,7 +915,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Dispersed_soil
 :Dispersed_soil rdf:type owl:Class ;
-                rdfs:subClassOf :Soil_structure .
+                rdfs:subClassOf :Cohesionless_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Downstream_reach
@@ -1029,6 +1131,35 @@
              rdfs:subClassOf :Compacted_layer .
 
 
+###  http://ontogeo.kz/geont-kz#Firm_stiff_loam
+:Firm_stiff_loam rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Loam
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasLiquidityIndex ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:double ;
+                                                                                   owl:withRestrictions ( [ xsd:minInclusive "0.25"^^xsd:double
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasLiquidityIndex ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:double ;
+                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "0.5"^^xsd:double
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:label "firm stiff loam"@en ,
+                            "отқа төзімді саздауыт"@kk ,
+                            "тугопластичный суглинок"@ru .
+
+
 ###  http://ontogeo.kz/geont-kz#Firstorder_elasticperfectly_plastic_analysis
 :Firstorder_elasticperfectly_plastic_analysis rdf:type owl:Class ;
                                               rdfs:subClassOf :Elastoplastic_analysis .
@@ -1097,7 +1228,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Freezingpoint_temperature
 :Freezingpoint_temperature rdf:type owl:Class ;
-                           rdfs:subClassOf :Frozen_soil .
+                           rdfs:subClassOf :GeotechnicalProperty .
 
 
 ###  http://ontogeo.kz/geont-kz#Friction_pile
@@ -1107,6 +1238,19 @@
 
 ###  http://ontogeo.kz/geont-kz#Frostsusceptible_soil
 :Frostsusceptible_soil rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Frozen_soil
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasRelativeFrostHeavingDeformation ;
+                                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                         owl:onDatatype xsd:double ;
+                                                                                         owl:withRestrictions ( [ xsd:minInclusive "0.01"^^xsd:double
+                                                                                                                ]
+                                                                                                              )
+                                                                                       ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
                        rdfs:subClassOf :Frozen_soil .
 
 
@@ -1234,6 +1378,36 @@
                             rdfs:subClassOf :Water_table .
 
 
+###  http://ontogeo.kz/geont-kz#High_water_saturation_soil
+:High_water_saturation_soil rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Cohesionless_soil
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasWaterContent ;
+                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:double ;
+                                                                                              owl:withRestrictions ( [ xsd:minExclusive "0.8"^^xsd:double
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ]
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasWaterContent ;
+                                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                              owl:onDatatype xsd:double ;
+                                                                                              owl:withRestrictions ( [ xsd:maxInclusive "1.0"^^xsd:double
+                                                                                                                     ]
+                                                                                                                   )
+                                                                                            ]
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf :Cohesionless_soil ;
+                            rdfs:label "soil with high water saturation"@en ,
+                                       "грунт высокой степени водонасыщения "@ru ,
+                                       "сумен қанығу деңгейі жоғары топырақ"@kz .
+
+
 ###  http://ontogeo.kz/geont-kz#Hoisting_cables
 :Hoisting_cables rdf:type owl:Class ;
                  rdfs:subClassOf :Equipment .
@@ -1266,6 +1440,19 @@
 
 ###  http://ontogeo.kz/geont-kz#Icerich_frozen_soil
 :Icerich_frozen_soil rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Soil_ground
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasIceContent ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:double ;
+                                                                                       owl:withRestrictions ( [ xsd:minInclusive "80.0"^^xsd:double
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
                      rdfs:subClassOf :Soil_ground .
 
 
@@ -1296,7 +1483,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Initial_collapse_moisture
 :Initial_collapse_moisture rdf:type owl:Class ;
-                           rdfs:subClassOf :Collapsible_soil .
+                           rdfs:subClassOf :Soil_structure .
 
 
 ###  http://ontogeo.kz/geont-kz#Initial_collapse_pressure
@@ -1439,6 +1626,39 @@
                     rdfs:subClassOf :Static_test_load .
 
 
+###  http://ontogeo.kz/geont-kz#Loam
+:Loam rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasPlasticityIndex ;
+                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                        owl:onDatatype xsd:double ;
+                                                                        owl:withRestrictions ( [ xsd:minExclusive "0.07"^^xsd:double
+                                                                                               ]
+                                                                                             )
+                                                                      ]
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasPlasticityIndex ;
+                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                        owl:onDatatype xsd:double ;
+                                                                        owl:withRestrictions ( [ xsd:maxInclusive "0.17"^^xsd:double
+                                                                                               ]
+                                                                                             )
+                                                                      ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf :Cohesive_soil ;
+      rdfs:comment "soil with a predominant concentration of clay and a high percentage of sand"@en-au ,
+                   "грунт с преобладающей концентрацией глины и высоким процентом песка"@ru ,
+                   "саздың басым концентрациясы және құмның жоғары пайызы бар топырақ"@kk ;
+      rdfs:label "loam"@en ,
+                 "саздауыт"@kk ,
+                 "суглинок"@ru .
+
+
 ###  http://ontogeo.kz/geont-kz#Local_construction_materials
 :Local_construction_materials rdf:type owl:Class ;
                               rdfs:subClassOf :GeotechnicalObject ,
@@ -1452,7 +1672,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Loess_soil
 :Loess_soil rdf:type owl:Class ;
-            rdfs:subClassOf :Cohesive_soil .
+            rdfs:subClassOf :Clay_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Longitudinal_drain
@@ -1466,9 +1686,51 @@
                       rdfs:subClassOf :Cohesionless_soil .
 
 
+###  http://ontogeo.kz/geont-kz#Loose_sand
+:Loose_sand rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Sand
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasPorosityCoefficient ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:maxExclusive "0.6"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Sand ;
+            rdfs:label "loose sand"@en ,
+                       "бос құм"@kk ,
+                       "рыхлый песок"@ru .
+
+
 ###  http://ontogeo.kz/geont-kz#Loosefrozen_soil
 :Loosefrozen_soil rdf:type owl:Class ;
                   rdfs:subClassOf :Frozen_soil .
+
+
+###  http://ontogeo.kz/geont-kz#Low_water_saturation_soil
+:Low_water_saturation_soil rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :Cohesionless_soil
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :hasWaterContent ;
+                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:double ;
+                                                                                             owl:withRestrictions ( [ xsd:maxInclusive "0.5"^^xsd:double
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :Cohesionless_soil ;
+                           rdfs:label "soil with low water saturation"@en ,
+                                      "грунт малой степени водонасыщения "@ru ,
+                                      "сумен қанығуы төмен топырақ"@kz .
 
 
 ###  http://ontogeo.kz/geont-kz#Maintainedload_test
@@ -1496,6 +1758,66 @@
                                      rdfs:subClassOf :GeotechnicalProperty .
 
 
+###  http://ontogeo.kz/geont-kz#Medium_density_sand
+:Medium_density_sand rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Sand
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasPorosityCoefficient ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:double ;
+                                                                                       owl:withRestrictions ( [ xsd:minInclusive "0.6"^^xsd:double
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasPorosityCoefficient ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:double ;
+                                                                                       owl:withRestrictions ( [ xsd:maxExclusive "0.75"^^xsd:double
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Sand ;
+                     rdfs:label "medium-density sand"@en ,
+                                "орташа тығыздықтағы құм"@kk ,
+                                "песок средней плотности"@ru .
+
+
+###  http://ontogeo.kz/geont-kz#Medium_water_saturation_soil
+:Medium_water_saturation_soil rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Cohesionless_soil
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasWaterContent ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:double ;
+                                                                                                owl:withRestrictions ( [ xsd:minExclusive "0.5"^^xsd:double
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasWaterContent ;
+                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:double ;
+                                                                                                owl:withRestrictions ( [ xsd:maxInclusive "0.8"^^xsd:double
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Cohesionless_soil ;
+                              rdfs:label "soil with medium water saturation"@en ,
+                                         "грунт средней степени водонасыщения "@ru ,
+                                         "орташа дәрежеде сумен қаныққан топырақ"@kz .
+
+
 ###  http://ontogeo.kz/geont-kz#Microzoning_map_engineering_geology
 :Microzoning_map_engineering_geology rdf:type owl:Class ;
                                      rdfs:subClassOf :Engineeringgeological_conditions .
@@ -1513,7 +1835,20 @@
 
 ###  http://ontogeo.kz/geont-kz#Mineral_soil
 :Mineral_soil rdf:type owl:Class ;
-              rdfs:subClassOf :Soil_material_composition .
+              owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasOrganicContent ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:double ;
+                                                                                owl:withRestrictions ( [ xsd:maxExclusive "3.0"^^xsd:double
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Mining_influence_zone
@@ -1568,12 +1903,47 @@
 
 ###  http://ontogeo.kz/geont-kz#Organic_soil
 :Organic_soil rdf:type owl:Class ;
-              rdfs:subClassOf :Organomineral_soil .
+              owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasOrganicContent ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:onDatatype xsd:double ;
+                                                                                owl:withRestrictions ( [ xsd:minInclusive "50.0"^^xsd:double
+                                                                                                       ]
+                                                                                                     )
+                                                                              ]
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Organomineral_soil
 :Organomineral_soil rdf:type owl:Class ;
-                    rdfs:subClassOf :Mineral_soil .
+                    owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasOrganicContent ;
+                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                      owl:onDatatype xsd:double ;
+                                                                                      owl:withRestrictions ( [ xsd:minInclusive "10.0"^^xsd:double
+                                                                                                             ]
+                                                                                                           )
+                                                                                    ]
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasOrganicContent ;
+                                                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                      owl:onDatatype xsd:double ;
+                                                                                      owl:withRestrictions ( [ xsd:maxExclusive "50.0"^^xsd:double
+                                                                                                             ]
+                                                                                                           )
+                                                                                    ]
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Overburden
@@ -1874,9 +2244,47 @@
       rdfs:subClassOf :Loose_granular_soils .
 
 
+###  http://ontogeo.kz/geont-kz#Sandy_loam
+:Sandy_loam rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasPlasticityIndex ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive "0.01"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasPlasticityIndex ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:maxInclusive "0.07"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf :Cohesive_soil ;
+            rdfs:comment "a loose sedimentary rock that consists predominantly of sand particles (about 80–90%) with the addition of 3–10% clay and dust impurities"@en ,
+                         "негізінен құм бөлшектерінен (шамамен 80-90%) тұратын және 3-10% саз бен шаң қоспалары қосылған борпылдақ шөгінді тау жынысы"@kk ,
+                         "рыхлая осадочная горная порода, которая состоит преимущественно из песчаных частиц (около 80–90%) с добавлением 3–10% глинистых и пылеватых примесей"@ru ;
+            rdfs:label "sandy loam"@en ,
+                       "супесь"@ru ,
+                       "құмды саздауыт"@kk .
+
+
 ###  http://ontogeo.kz/geont-kz#Sapropel
 :Sapropel rdf:type owl:Class ;
-          rdfs:subClassOf :Organic_soil .
+          rdfs:subClassOf :Cohesive_soil ,
+                          [ rdf:type owl:Class ;
+                            owl:unionOf ( :Organic_soil
+                                          :Organomineral_soil
+                                        )
+                          ] .
 
 
 ###  http://ontogeo.kz/geont-kz#Sealing_grout
@@ -1959,7 +2367,7 @@
 
 ###  http://ontogeo.kz/geont-kz#Silt_mud
 :Silt_mud rdf:type owl:Class ;
-          rdfs:subClassOf :Soil_material_composition .
+          rdfs:subClassOf :Cohesive_soil .
 
 
 ###  http://ontogeo.kz/geont-kz#Sinkhole
@@ -2005,6 +2413,35 @@
 ###  http://ontogeo.kz/geont-kz#Slurrywall_construction
 :Slurrywall_construction rdf:type owl:Class ;
                          rdfs:subClassOf :GeotechnicalProcess .
+
+
+###  http://ontogeo.kz/geont-kz#Soft_firm_loam
+:Soft_firm_loam rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :Loam
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasLiquidityIndex ;
+                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                  owl:onDatatype xsd:double ;
+                                                                                  owl:withRestrictions ( [ xsd:minInclusive "0.5"^^xsd:double
+                                                                                                         ]
+                                                                                                       )
+                                                                                ]
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasLiquidityIndex ;
+                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                  owl:onDatatype xsd:double ;
+                                                                                  owl:withRestrictions ( [ xsd:maxExclusive "0.75"^^xsd:double
+                                                                                                         ]
+                                                                                                       )
+                                                                                ]
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:label "soft firm loam"@en ,
+                           "жұмсақ пластикалық саздауыт"@kk ,
+                           "мягкопластичный суглинок"@ru .
 
 
 ###  http://ontogeo.kz/geont-kz#Soil_cushion
@@ -2121,6 +2558,35 @@
                              rdfs:subClassOf :Tamping_regime .
 
 
+###  http://ontogeo.kz/geont-kz#Stiff_loam
+:Stiff_loam rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( :Loam
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasLiquidityIndex ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasLiquidityIndex ;
+                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                              owl:onDatatype xsd:double ;
+                                                                              owl:withRestrictions ( [ xsd:maxExclusive "0.25"^^xsd:double
+                                                                                                     ]
+                                                                                                   )
+                                                                            ]
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:label "stiff loam"@en ,
+                       "полутвердый суглинок"@ru ,
+                       "қатты саздауыт"@kk .
+
+
 ###  http://ontogeo.kz/geont-kz#Stiff_material
 :Stiff_material rdf:type owl:Class ;
                 rdfs:subClassOf :Earth_construction_materials .
@@ -2199,6 +2665,19 @@
 
 ###  http://ontogeo.kz/geont-kz#Swelling_clay
 :Swelling_clay rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Cohesive_soil
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasRelativeSwellingDeformation ;
+                                                            owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                 owl:onDatatype xsd:double ;
+                                                                                 owl:withRestrictions ( [ xsd:minInclusive "0.04"^^xsd:double
+                                                                                                        ]
+                                                                                                      )
+                                                                               ]
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
                rdfs:subClassOf :Cohesive_soil .
 
 
@@ -2354,6 +2833,75 @@
                                                      <https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000002> .
 
 
+###  http://ontogeo.kz/geont-kz#Very_soft_firm_loam
+:Very_soft_firm_loam rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Loam
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasLiquidityIndex ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:double ;
+                                                                                       owl:withRestrictions ( [ xsd:minInclusive "0.75"^^xsd:double
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasLiquidityIndex ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:double ;
+                                                                                       owl:withRestrictions ( [ xsd:maxExclusive "1.0"^^xsd:double
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:label "very soft firm loam"@en ,
+                                "сұйық пластикалық саздауыт"@kk ,
+                                "текучепластичный суглинок"@ru .
+
+
+###  http://ontogeo.kz/geont-kz#Very_soft_soft_loam
+:Very_soft_soft_loam rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :Loam
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :hasLiquidityIndex ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:double ;
+                                                                                       owl:withRestrictions ( [ xsd:minInclusive "1.0"^^xsd:double
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:label "very soft soft loam"@en ,
+                                "сұйық саздауыт"@kk ,
+                                "текучий суглинок"@ru .
+
+
+###  http://ontogeo.kz/geont-kz#Very_stiff_loam
+:Very_stiff_loam rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Loam
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasLiquidityIndex ;
+                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                   owl:onDatatype xsd:double ;
+                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "0.0"^^xsd:double
+                                                                                                          ]
+                                                                                                        )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:label "very stiff loam"@en ,
+                            "твердый суглинок"@ru ,
+                            "өте қатты саздауыт"@kk .
+
+
 ###  http://ontogeo.kz/geont-kz#Vibration_damping
 :Vibration_damping rdf:type owl:Class ;
                    rdfs:subClassOf :Stress_relaxation .
@@ -2398,106 +2946,6 @@
 ###  http://ontogeo.kz/geont-kz#Youngs_modulus
 :Youngs_modulus rdf:type owl:Class ;
                 rdfs:subClassOf :Stiffness .
-
-
-###  http://ontogeo.kz/geont-kz#firm_stiff_loam
-:firm_stiff_loam rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( :loam
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :hasLiquidityIndex ;
-                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                   owl:onDatatype xsd:double ;
-                                                                                   owl:withRestrictions ( [ xsd:minInclusive "0.25"^^xsd:double
-                                                                                                          ]
-                                                                                                        )
-                                                                                 ]
-                                                            ]
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :hasLiquidityIndex ;
-                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                   owl:onDatatype xsd:double ;
-                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "0.5"^^xsd:double
-                                                                                                          ]
-                                                                                                        )
-                                                                                 ]
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
-                 rdfs:label "firm stiff loam"@en ,
-                            "отқа төзімді саздауыт"@kk ,
-                            "тугопластичный суглинок"@ru .
-
-
-###  http://ontogeo.kz/geont-kz#loam
-:loam rdf:type owl:Class ;
-      rdfs:subClassOf :Cohesive_soil ;
-      rdfs:comment "soil with a predominant concentration of clay and a high percentage of sand"@en-au ,
-                   "грунт с преобладающей концентрацией глины и высоким процентом песка"@ru ,
-                   "саздың басым концентрациясы және құмның жоғары пайызы бар топырақ"@kk ;
-      rdfs:label "loam"@en ,
-                 "саздауыт"@kk ,
-                 "суглинок"@ru .
-
-
-###  http://ontogeo.kz/geont-kz#sandy_loam
-:sandy_loam rdf:type owl:Class ;
-            rdfs:subClassOf :Cohesive_soil ;
-            rdfs:comment "a loose sedimentary rock that consists predominantly of sand particles (about 80–90%) with the addition of 3–10% clay and dust impurities"@en ,
-                         "негізінен құм бөлшектерінен (шамамен 80-90%) тұратын және 3-10% саз бен шаң қоспалары қосылған борпылдақ шөгінді тау жынысы"@kk ,
-                         "рыхлая осадочная горная порода, которая состоит преимущественно из песчаных частиц (около 80–90%) с добавлением 3–10% глинистых и пылеватых примесей"@ru ;
-            rdfs:label "sandy loam"@en ,
-                       "супесь"@ru ,
-                       "құмды саздауыт"@kk .
-
-
-###  http://ontogeo.kz/geont-kz#stiff_loam
-:stiff_loam rdf:type owl:Class ;
-            owl:equivalentClass [ owl:intersectionOf ( :loam
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :hasLiquidityIndex ;
-                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                              owl:onDatatype xsd:double ;
-                                                                              owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:double
-                                                                                                     ]
-                                                                                                   )
-                                                                            ]
-                                                       ]
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :hasLiquidityIndex ;
-                                                         owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                              owl:onDatatype xsd:double ;
-                                                                              owl:withRestrictions ( [ xsd:maxExclusive "0.25"^^xsd:double
-                                                                                                     ]
-                                                                                                   )
-                                                                            ]
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
-            rdfs:label "stiff loam"@en ,
-                       "полутвердый суглинок"@ru ,
-                       "қатты саздауыт"@kk .
-
-
-###  http://ontogeo.kz/geont-kz#very_stiff_loam
-:very_stiff_loam rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( :loam
-                                                            [ rdf:type owl:Restriction ;
-                                                              owl:onProperty :hasLiquidityIndex ;
-                                                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
-                                                                                   owl:onDatatype xsd:double ;
-                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "0.0"^^xsd:double
-                                                                                                          ]
-                                                                                                        )
-                                                                                 ]
-                                                            ]
-                                                          ) ;
-                                       rdf:type owl:Class
-                                     ] ;
-                 rdfs:label "very stiff loam"@en ,
-                            "твердый суглинок"@ru ,
-                            "өте қатты саздауыт"@kk .
 
 
 #################################################################
